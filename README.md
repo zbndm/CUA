@@ -19,7 +19,7 @@ If you have any question while using this, feel free to join our [👾Discord�
 - [tamagui + solito starter](https://github.com/tamagui/tamagui/tree/master/starters/next-expo-solito): expo + next code share - no tRPC & no built-in auth.
 
 ## 🌟 How it works
-
+   
 ### Folder Structure
 
 - **apps**
