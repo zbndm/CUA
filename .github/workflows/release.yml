@@ -27,7 +27,7 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies
-        run: yarn
+        run: yarn && yarn build
         
 
     
@@ -38,7 +38,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
+          
+          
+          
+      - uses: amondnet/vercel-action@v20 #deploy
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          
+          vercel-args: '--prod' #Optional
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  #Required
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required 
+          working-directory: ./apps/nextjs
 #       - name: Send a Slack notification if a publish happens
 #         if: steps.changesets.outputs.published == 'true'
 #         # You can do something when a publish happens.
