@@ -4,7 +4,6 @@
 
 ## 🌌 What is this?
 
-
 **create-universal-app (CUA)** is an opinionated template for creating full-stack universal (mobile + web codeshare) apps with built-in auth for both mobile and web using **Expo** (mobile), **NextJS** (web), **tRPC**, **Prisma**, **Tamagui** (UI + styling), and **Clerk** (mobile + web auth). A **demo** is live at <https://cua-demo.vercel.app/>.
 
 [Here's](https://youtu.be/aTEv0-ZBbWk) a 20 minute Youtube tutorial going over everything if that's more of your style!
