@@ -14,19 +14,19 @@ Tamagui built config and components:[0m
              ./.tamagui/o6ui-components.config.cjs
              @tamagui/core
 [0m
- web  |                    screen   19 ·  10 ·   9 ·   0    85ms 
+ web  |                    screen   19 ·  10 ·   9 ·   0    73ms 
  web  |                    screen    1 ·   1 ·   0 ·   0    15ms 
- web  |                    screen    3 ·   1 ·   0 ·   0   122ms 
+ web  |             detail-screen    3 ·   2 ·   1 ·   0   118ms 
+ web  |                    screen    3 ·   1 ·   0 ·   0    16ms 
+ web  |                    screen    1 ·   1 ·   0 ·   0     7ms 
+ web  |              SignUpSignIn   19 ·  13 ·   8 ·   0    49ms 
+ web  |               MyComponent    0 ·   0 ·   0 ·   1     6ms 
+ web  |                    screen    3 ·   1 ·   0 ·   0    10ms 
+ web  |             detail-screen    3 ·   2 ·   1 ·   0     8ms 
+ web  |                    screen   19 ·  10 ·   9 ·   0    38ms 
  web  |                    screen    1 ·   1 ·   0 ·   0    10ms 
- web  |             detail-screen    3 ·   2 ·   1 ·   0    14ms 
- web  |              SignUpSignIn   19 ·  13 ·   8 ·   0    38ms 
- web  |               MyComponent    0 ·   0 ·   0 ·   1     5ms 
  web  |                    screen    1 ·   1 ·   0 ·   0     6ms 
- web  |                    screen    3 ·   1 ·   0 ·   0     9ms 
- web  |                    screen    1 ·   1 ·   0 ·   0     4ms 
- web  |             detail-screen    3 ·   2 ·   1 ·   0     9ms 
- web  |                    screen   19 ·  10 ·   9 ·   0    26ms 
- web  |              SignUpSignIn   19 ·  13 ·   8 ·   0    30ms 
+ web  |              SignUpSignIn   19 ·  13 ·   8 ·   0    29ms 
  web  |               MyComponent    0 ·   0 ·   0 ·   1     3ms 
 info  - Compiled successfully
 info  - Collecting page data...
@@ -42,16 +42,16 @@ info  - Generating static pages (8/8)
 info  - Finalizing page optimization...
 
 Route (pages)                               Size     First Load JS
-┌ ○ / (1729 ms)                             2.41 kB         223 kB
+┌ ○ / (1793 ms)                             2.41 kB         223 kB
 ├   └ css/30d52420f40b434d.css              733 B
 ├   /_app                                   0 B             199 kB
 ├ ○ /404                                    181 B           199 kB
 ├ λ /api/trpc/[trpc]                        0 B             199 kB
-├ ○ /signin (1637 ms)                       1.82 kB         231 kB
-├ ○ /signup (1697 ms)                       1.54 kB         231 kB
-├ ○ /signup/email-verification (1728 ms)    3.35 kB         224 kB
-├ ○ /signup/sso-oauth/[strategy] (1694 ms)  2.61 kB         201 kB
-└ ○ /user/[id] (1974 ms)                    2.13 kB         223 kB
+├ ○ /signin (1815 ms)                       1.82 kB         231 kB
+├ ○ /signup (1735 ms)                       1.54 kB         231 kB
+├ ○ /signup/email-verification (1763 ms)    3.35 kB         224 kB
+├ ○ /signup/sso-oauth/[strategy] (1735 ms)  2.61 kB         201 kB
+└ ○ /user/[id] (2097 ms)                    2.13 kB         223 kB
     └ css/e8d1b42d15a5efb2.css              294 B
 + First Load JS shared by all               405 kB
   ├ chunks/framework-722501b40beae0c7.js    45.2 kB
