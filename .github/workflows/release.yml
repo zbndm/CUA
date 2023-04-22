@@ -1,23 +1,30 @@
-name: Release
+name: My first job
 
 on:
   push:
     branches:
-      - master
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
-
+      - main
 
 jobs:
-  release:
-    name: Release
+  my_first_job:
+    name: My first job
     runs-on: ubuntu-latest
 
-    environment: 
+    environment:
       name: this
       url: https://github.com/ka9an/denopendabot
 
-  
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_PROJECT_NAME: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_PUBLIC_BUCKET: ${{ secrets.R2_PUBLIC_BUCKET }}
+      PRODUCTION_BRANCH: main
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -29,28 +36,8 @@ jobs:
 
       - name: Install Dependencies
         run: yarn && yarn build
-        
 
-    
-  
-#        with:
-#           # This expects you to have a script called release which does a build for your packages and calls changeset publish
-#             publish: yarn build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          
-          
-          
-      - uses: amondnet/vercel-action@v20 #deploy
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-          
-          vercel-args: '--prod' #Optional
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  #Required
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required 
-          working-directory: ./apps/nextjs
-#       - name: Send a Slack notification if a publish happens
-#         if: steps.changesets.outputs.published == 'true'
-#         # You can do something when a publish happens.
-#         run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
+      - name: Setup
+        run: yarn setup:production
+      - name: Deploy to Cloudflare Pages
+        run: yarn deploy:github
